@@ -1,6 +1,19 @@
 import streamlit as st
 import pandas as pd
 
+st.set_page_config(page_title="Carbon Emissions Calculator", page_icon=":earth_africa:", layout="wide")
+
+# Hide Streamlit style elements like header and footer
+hide_streamlit_style = """
+            <style>
+            #MainMenu {visibility: hidden;}
+            footer {visibility: hidden;}
+            header {visibility: hidden;}
+            </style>
+            """
+st.markdown(hide_streamlit_style, unsafe_allow_html=True)
+
+
 def calculate_baseline_emissions(num_dwellings, dwelling_data):
     total_baseline_emissions = 0
     total_emissions_after_demand_reduction = 0
